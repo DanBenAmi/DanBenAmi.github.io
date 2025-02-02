@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan Ben Ami - Professional Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid white;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .experience-item, .project-item {
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/api/placeholder/150/150" alt="Your Profile Picture" class="profile-img">
+        <h1>Your Name</h1>
+        <p>Professional Title | Location</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Write a brief professional summary here. Highlight your key strengths, career objectives, and what makes you unique in your field. This is your chance to make a strong first impression.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        
+        <div class="experience-item">
+            <h3>Job Title - Company Name</h3>
+            <p><em>Month Year - Present</em></p>
+            <ul>
+                <li>Key achievement or responsibility 1</li>
+                <li>Key achievement or responsibility 2</li>
+                <li>Key achievement or responsibility 3</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Previous Job Title - Company Name</h3>
+            <p><em>Month Year - Month Year</em></p>
+            <ul>
+                <li>Key achievement or responsibility 1</li>
+                <li>Key achievement or responsibility 2</li>
+                <li>Key achievement or responsibility 3</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Notable Projects</h2>
+        
+        <div class="project-item">
+            <h3>Project Name</h3>
+            <p>Brief description of the project, including your role, technologies used, and the impact or results achieved.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>Project Name</h3>
+            <p>Brief description of the project, including your role, technologies used, and the impact or results achieved.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>Language 1</li>
+                    <li>Language 2</li>
+                    <li>Language 3</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Frameworks & Tools</h3>
+                <ul>
+                    <li>Framework 1</li>
+                    <li>Framework 2</li>
+                    <li>Framework 3</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Skill 1</li>
+                    <li>Skill 2</li>
+                    <li>Skill 3</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+            <p><i class="fas fa-phone"></i> Your Phone Number</p>
+            <p><i class="fas fa-location-dot"></i> Your Location</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
