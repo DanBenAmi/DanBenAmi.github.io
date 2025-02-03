@@ -19,6 +19,9 @@
     /* Remove extra space between sections but still allow some padding */
     section {
       padding: 60px 0;
+      /* This property makes the browser offset the scroll position,
+         ensuring the section header isn’t hidden behind the fixed navbar. */
+      scroll-margin-top: 80px;
     }
     /* Top section (hero) styling with background image and overlay */
     .top-section {
@@ -26,7 +29,7 @@
       background-size: cover;
       position: relative;
       color: white;
-      text-align: center;
+      text-align: left;
       padding: 120px 0;
     }
     .top-section::after {
@@ -118,11 +121,13 @@
   <section class="top-section" id="page-top">
     <div class="top-section-content container">
       <div class="row align-items-center">
+        <!-- Left column: Name and Profession -->
         <div class="col-md-8">
           <h1 class="display-4">Your Name</h1>
           <p class="lead">Your Tagline or Profession</p>
         </div>
-        <div class="col-md-4">
+        <!-- Right column: Optional Photo -->
+        <div class="col-md-4 text-center">
           <img src="https://via.placeholder.com/250" alt="Your Photo" class="img-fluid rounded-circle shadow">
         </div>
       </div>
@@ -138,7 +143,6 @@
       <div class="entry">
         <p><strong>Example 1:</strong> I am a dedicated professional with extensive experience in ...</p>
         <p><strong>Example 2:</strong> Passionate about innovation and technology, I have developed ...</p>
-        <!-- Copy and paste additional <p> tags as needed -->
       </div>
     </div>
   </section>
@@ -161,12 +165,6 @@
           <p>Additional details: Collaborated with the team to optimize ...</p>
           <!-- Media Placeholder: Replace the src with your video or image URL -->
           <img src="https://via.placeholder.com/400x225" alt="Project A1 Media" class="media-placeholder">
-          <!-- Or, use a video block (comment/uncomment as needed):
-          <video class="media-placeholder" controls>
-            <source src="video_project_A1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          -->
         </div>
         <div class="project-entry">
           <h4>Project A2</h4>
@@ -203,7 +201,6 @@
           </video>
         </div>
       </div>
-      <!-- To add additional work entries, copy one of the entire "entry" blocks and update the content. -->
     </div>
   </section>
 
@@ -259,7 +256,6 @@
           </video>
         </div>
       </div>
-      <!-- To add additional academic entries, duplicate an "entry" block. -->
     </div>
   </section>
 
@@ -309,7 +305,6 @@
           </video>
         </div>
       </div>
-      <!-- To add more notable projects, copy one of the "entry" blocks. -->
     </div>
   </section>
 
@@ -322,7 +317,6 @@
       <div class="entry">
         <p><strong>Award 1:</strong> Description of the award, awarding organization, and date.</p>
         <p><strong>Award 2:</strong> Description of the award, awarding organization, and date.</p>
-        <!-- Add more awards as needed -->
       </div>
     </div>
   </section>
@@ -339,7 +333,6 @@
           <li>Team Collaboration</li>
           <li>Leadership</li>
           <li>Problem Solving</li>
-          <!-- Add more soft skills as needed -->
         </ul>
         <p><strong>Example 1:</strong> Demonstrated strong teamwork and communication in challenging projects.</p>
         <p><strong>Example 2:</strong> Proven leadership skills in managing multi-disciplinary teams.</p>
@@ -359,7 +352,6 @@
           <li>JavaScript (React, Vue, etc.)</li>
           <li>Java</li>
           <li>C++</li>
-          <!-- Add more languages/libraries as needed -->
         </ul>
         <p><strong>Example 1:</strong> Extensive experience in Python with deep learning frameworks.</p>
         <p><strong>Example 2:</strong> Proficient in JavaScript and modern front-end development.</p>
@@ -377,7 +369,6 @@
         <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p>Phone: +1234567890</p>
         <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
-        <!-- Add additional contact details as needed -->
       </div>
     </div>
   </section>
