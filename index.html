@@ -1,250 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Professional Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            border: 3px solid white;
-        }
-
-        nav {
-            background-color: var(--secondary-color);
-            padding: 1rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 3rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section:nth-child(even) {
-            background-color: var(--light-bg);
-        }
-
-        h1, h2, h3 {
-            margin-bottom: 1rem;
-        }
-
-        .experience-item, .project-item {
-            margin-bottom: 2rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .skill-category {
-            background-color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Resume</title>
+  <!-- Animate.css for simple animations -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    /* Enable smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f4f4;
+    }
+    /* Fixed navigation bar styles */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: #333;
+      color: #fff;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #fff;
+    }
+    nav ul li a:hover {
+      background: #555;
+      transition: background 0.3s;
+    }
+    /* Section styles with top padding to avoid overlap with fixed navbar */
+    section {
+      padding: 80px 20px;
+      min-height: 100vh;
+      margin-top: 50px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+    /* Work/Academic/Project entry styles */
+    .work-entry {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .project-entry {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+    /* Media placeholders (images or videos) */
+    .media-placeholder {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin-top: 10px;
+    }
+    /* Responsive images and videos */
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="IMG_7621.jpg" alt="Your Profile Picture" class="profile-img">
-        <h1>Dan Ben Ami</h1>
-        <p>Computer Vision & Deep Learning Researcher @ Elop | EE PhD candidate @ BGU | Tel Aviv</p>
-    </header>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#work">Work Experience</a></li>
+      <li><a href="#academic">Academic Experience &amp; Publications</a></li>
+      <li><a href="#projects">Notable Projects</a></li>
+      <li><a href="#soft-skills">Soft Skills</a></li>
+      <li><a href="#programming">Programming Languages &amp; Libraries</a></li>
+      <li><a href="#contact">Contact Information</a></li>
+    </ul>
+  </nav>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Home Section -->
+  <section id="home" class="container animate__animated animate__fadeIn">
+    <h1>Welcome to My Resume</h1>
+    <p>
+      This is my landing page. Use the navigation buttons above to scroll
+      to different sections of my resume.
+    </p>
+    <!-- You can add more introductory content here -->
+  </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write a brief professional summary here. Highlight your key strengths, career objectives, and what makes you unique in your field. This is your chance to make a strong first impression.</p>
-    </section>
+  <!-- About Me Section -->
+  <section id="about" class="container animate__animated animate__fadeIn">
+    <h2>About Me</h2>
+    <p>
+      <strong>Example 1:</strong> I am a passionate developer with a strong
+      background in creating responsive and dynamic web applications.
+    </p>
+    <p>
+      <strong>Example 2:</strong> My experience in front-end and back-end
+      development allows me to bring innovative solutions to complex problems.
+    </p>
+    <!-- To add more examples, simply copy and paste a <p> block -->
+  </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        
-        <div class="experience-item">
-            <h3>Job Title - Company Name</h3>
-            <p><em>Month Year - Present</em></p>
-            <ul>
-                <li>Key achievement or responsibility 1</li>
-                <li>Key achievement or responsibility 2</li>
-                <li>Key achievement or responsibility 3</li>
-            </ul>
-        </div>
+  <!-- Work Experience Section -->
+  <section id="work" class="container animate__animated animate__fadeIn">
+    <h2>Work Experience</h2>
+    <!-- Work Experience Entry 1 -->
+    <div class="work-entry">
+      <h3>Company A - Position Title</h3>
+      <p><em>Jan 2020 - Present</em></p>
+      <p>
+        Responsibilities: Managing teams and leading projects to improve
+        operational efficiency and develop innovative solutions.
+      </p>
+      <!-- Multiple Projects Under the Same Work Experience -->
+      <div class="project-entry">
+        <h4>Project A1</h4>
+        <p>
+          Description: Developed a web application that streamlines workflow
+          processes.
+        </p>
+        <p>Additional details: This project involved full-stack development.</p>
+        <!-- Video or image related to Project A1 -->
+        <video class="media-placeholder" controls>
+          <source src="video_placeholder_A1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="project-entry">
+        <h4>Project A2</h4>
+        <p>
+          Description: Implemented a data visualization tool that improved data
+          analysis.
+        </p>
+        <p>Additional details: Used D3.js for interactive charts.</p>
+        <!-- Video or image related to Project A2 -->
+        <img
+          class="media-placeholder"
+          src="image_placeholder_A2.jpg"
+          alt="Project A2 Image"
+        />
+      </div>
+      <!-- To add more projects, duplicate a "project-entry" block and update the content -->
+    </div>
 
-        <div class="experience-item">
-            <h3>Previous Job Title - Company Name</h3>
-            <p><em>Month Year - Month Year</em></p>
-            <ul>
-                <li>Key achievement or responsibility 1</li>
-                <li>Key achievement or responsibility 2</li>
-                <li>Key achievement or responsibility 3</li>
-            </ul>
-        </div>
-    </section>
+    <!-- Work Experience Entry 2 -->
+    <div class="work-entry">
+      <h3>Company B - Position Title</h3>
+      <p><em>Jun 2018 - Dec 2019</em></p>
+      <p>
+        Responsibilities: Worked on multiple client projects to develop custom
+        software solutions.
+      </p>
+      <!-- Multiple Projects Under the Same Work Experience -->
+      <div class="project-entry">
+        <h4>Project B1</h4>
+        <p>
+          Description: Enhanced system performance through code optimization
+          and architectural improvements.
+        </p>
+        <p>Additional details: Collaborated with cross-functional teams.</p>
+        <!-- Video or image related to Project B1 -->
+        <video class="media-placeholder" controls>
+          <source src="video_placeholder_B1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="project-entry">
+        <h4>Project B2</h4>
+        <p>
+          Description: Developed a client-facing dashboard to monitor project
+          metrics.
+        </p>
+        <p>Additional details: Integrated third-party APIs for real-time data.</p>
+        <!-- Video or image related to Project B2 -->
+        <img
+          class="media-placeholder"
+          src="image_placeholder_B2.jpg"
+          alt="Project B2 Image"
+        />
+      </div>
+    </div>
+    <!-- To add additional work experience entries, copy the entire "work-entry" block -->
+  </section>
 
-    <section id="projects">
-        <h2>Notable Projects</h2>
-        
-        <div class="project-item">
-            <h3>Project Name</h3>
-            <p>Brief description of the project, including your role, technologies used, and the impact or results achieved.</p>
-        </div>
+  <!-- Academic Experience & Publications Section -->
+  <section id="academic" class="container animate__animated animate__fadeIn">
+    <h2>Academic Experience &amp; Publications</h2>
+    <!-- Academic Entry 1 -->
+    <div class="work-entry">
+      <h3>University X - Research Assistant</h3>
+      <p><em>Sep 2016 - May 2018</em></p>
+      <p>
+        Responsibilities: Assisted in research on advanced machine learning
+        algorithms.
+      </p>
+      <div class="project-entry">
+        <h4>Publication 1</h4>
+        <p>Title: "Deep Learning Approaches for Enhanced Prediction"</p>
+        <p>Description: Summarizes the research and key findings.</p>
+        <!-- Video or image related to Publication 1 -->
+        <img
+          class="media-placeholder"
+          src="pub_image1.jpg"
+          alt="Publication 1 Image"
+        />
+      </div>
+      <div class="project-entry">
+        <h4>Publication 2</h4>
+        <p>Title: "Advances in Neural Network Architectures"</p>
+        <p>Description: Overview of methodology and experiments.</p>
+        <!-- Video or image related to Publication 2 -->
+        <video class="media-placeholder" controls>
+          <source src="pub_video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
 
-        <div class="project-item">
-            <h3>Project Name</h3>
-            <p>Brief description of the project, including your role, technologies used, and the impact or results achieved.</p>
-        </div>
-    </section>
+    <!-- Academic Entry 2 -->
+    <div class="work-entry">
+      <h3>University Y - Graduate Student</h3>
+      <p><em>Sep 2014 - May 2016</em></p>
+      <p>
+        Focus: Specialized in computer science research with emphasis on
+        optimization techniques.
+      </p>
+      <div class="project-entry">
+        <h4>Thesis Project</h4>
+        <p>Title: "Optimizing Deep Learning Models"</p>
+        <p>Description: In-depth research on optimization strategies.</p>
+        <!-- Video or image related to Thesis Project -->
+        <img
+          class="media-placeholder"
+          src="thesis_image.jpg"
+          alt="Thesis Project Image"
+        />
+      </div>
+      <div class="project-entry">
+        <h4>Conference Paper</h4>
+        <p>Title: "A Novel Approach to Data Augmentation"</p>
+        <p>Description: Presentation of new techniques in data augmentation.</p>
+        <!-- Video or image related to Conference Paper -->
+        <video class="media-placeholder" controls>
+          <source src="conference_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <!-- To add additional academic entries, duplicate a "work-entry" block -->
+  </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <ul>
-                    <li>Language 1</li>
-                    <li>Language 2</li>
-                    <li>Language 3</li>
-                </ul>
-            </div>
+  <!-- Notable Projects Section -->
+  <section id="projects" class="container animate__animated animate__fadeIn">
+    <h2>Notable Projects</h2>
+    <!-- Project Entry 1 -->
+    <div class="work-entry">
+      <h3>Project X</h3>
+      <p>
+        Description: A cutting-edge project leveraging innovative technologies
+        to solve real-world challenges.
+      </p>
+      <div class="project-entry">
+        <h4>Detail 1</h4>
+        <p>Overview: Technical specifications and achievements.</p>
+        <!-- Video or image related to this detail -->
+        <img
+          class="media-placeholder"
+          src="project_x_img.jpg"
+          alt="Project X Image"
+        />
+      </div>
+      <div class="project-entry">
+        <h4>Detail 2</h4>
+        <p>Overview: Further insights into the development process.</p>
+        <!-- Video or image related to this detail -->
+        <video class="media-placeholder" controls>
+          <source src="project_x_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
 
-            <div class="skill-category">
-                <h3>Frameworks & Tools</h3>
-                <ul>
-                    <li>Framework 1</li>
-                    <li>Framework 2</li>
-                    <li>Framework 3</li>
-                </ul>
-            </div>
+    <!-- Project Entry 2 -->
+    <div class="work-entry">
+      <h3>Project Y</h3>
+      <p>
+        Description: An innovative project focused on integrating multiple
+        technologies for enhanced performance.
+      </p>
+      <div class="project-entry">
+        <h4>Detail 1</h4>
+        <p>Overview: Summary and technical details.</p>
+        <!-- Video or image related to this detail -->
+        <img
+          class="media-placeholder"
+          src="project_y_img.jpg"
+          alt="Project Y Image"
+        />
+      </div>
+      <div class="project-entry">
+        <h4>Detail 2</h4>
+        <p>Overview: Description of features and outcomes.</p>
+        <!-- Video or image related to this detail -->
+        <video class="media-placeholder" controls>
+          <source src="project_y_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <!-- To add more notable projects, duplicate a "work-entry" block -->
+  </section>
 
-            <div class="skill-category">
-                <h3>Soft Skills</h3>
-                <ul>
-                    <li>Skill 1</li>
-                    <li>Skill 2</li>
-                    <li>Skill 3</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <!-- Soft Skills Section -->
+  <section id="soft-skills" class="container animate__animated animate__fadeIn">
+    <h2>Soft Skills</h2>
+    <ul>
+      <li>Communication</li>
+      <li>Teamwork</li>
+      <!-- To add more skills, simply add more <li> elements -->
+    </ul>
+    <p>
+      <strong>Example 1:</strong> I excel in collaborative environments and
+      communicate effectively with team members.
+    </p>
+    <p>
+      <strong>Example 2:</strong> My leadership and conflict resolution skills
+      have consistently helped drive projects forward.
+    </p>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> your.email@example.com</p>
-            <p><i class="fas fa-phone"></i> Your Phone Number</p>
-            <p><i class="fas fa-location-dot"></i> Your Location</p>
-        </div>
-        
-        <div class="social-links">
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
-    </section>
+  <!-- Programming Languages & Libraries Section -->
+  <section id="programming" class="container animate__animated animate__fadeIn">
+    <h2>Programming Languages &amp; Libraries</h2>
+    <ul>
+      <li>Python</li>
+      <li>JavaScript</li>
+      <!-- Add more languages or libraries as needed -->
+    </ul>
+    <p>
+      <strong>Example 1:</strong> Proficient in Python and experienced with
+      libraries such as TensorFlow and PyTorch.
+    </p>
+    <p>
+      <strong>Example 2:</strong> Skilled in front-end technologies like React,
+      Vue.js, and modern CSS frameworks.
+    </p>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+  <!-- Contact Information Section -->
+  <section id="contact" class="container animate__animated animate__fadeIn">
+    <h2>Contact Information</h2>
+    <p>Email: your.email@example.com</p>
+    <p>Phone: +1234567890</p>
+    <p>
+      LinkedIn:
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"
+        >Your Profile</a
+      >
+    </p>
+    <!-- Add additional contact details as needed -->
+  </section>
+
+  <!-- Optional JavaScript for additional interactions -->
+  <script>
+    // The CSS "scroll-behavior: smooth;" handles smooth scrolling.
+    // Additional JavaScript can be added here if more interactivity is needed.
+  </script>
 </body>
 </html>
