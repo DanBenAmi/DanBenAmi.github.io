@@ -61,6 +61,18 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .entry-logo {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      margin-left: 15px;
+      flex-shrink: 0;
+    }
     .project-entry {
       border-top: 1px solid #ddd;
       margin-top: 15px;
@@ -171,10 +183,28 @@
         <h2><i class="bi bi-briefcase"></i> Work Experience</h2>
       </header>
 
-<!-- Work Entry 1 -->
+<!-- Work Entry 1: Microsoft -->
 <div class="entry">
-  <h3>Elop - Computer Vision & AI Algorithm Developer</h3>
-  <p><em>Feb/2023 - Present</em></p>
+  <div class="entry-header">
+    <h3>Microsoft - Computer Vision Data Scientist PhD Intern</h3>
+    <img src="Microsoft_logo.svg" alt="Microsoft Logo" class="entry-logo">
+  </div>
+  <p><em>Nov/2025 - Present | WSSI</em></p>
+  <ul>
+    <li>Developing a production-grade image super resolution and restoration system as part of a cross-functional team.</li>
+    <li>Conducting comprehensive literature reviews and benchmarking CNN-based and Transformer-based architectures on internal datasets.</li>
+    <li>Training, fine-tuning, and optimizing models, including knowledge distillation techniques to compress high-performing architectures for deployment.</li>
+    <li>Designing and executing rigorous evaluation pipelines to assess model quality across perceptual and fidelity metrics.</li>
+  </ul>
+</div>
+
+<!-- Work Entry 2: Elop -->
+<div class="entry">
+  <div class="entry-header">
+    <h3>Elop - Computer Vision & AI Algorithm Developer</h3>
+    <img src="elop.jpg" alt="Elop Logo" class="entry-logo">
+  </div>
+  <p><em>Feb/2023 - Oct/2023</em></p>
   <ul>
     <li>Performed a diverse range of Computer Vision and Vision-Languege tasks and developed a deep understanding of various state-of-the-art (SOTA) models and architectures.</li>
     <li>Received project requirements and system constraints, then designed, optimized, and integrated custom algorithmic pipelines into larger systems.</li>
@@ -254,9 +284,12 @@
   </div>
 </div>
 
-  <!-- Work Entry 2: Teaching Assistant -->
+  <!-- Work Entry 3: Teaching Assistant -->
 <div class="entry">
-  <h3>Ben-Gurion University - Teaching Assistant</h3>
+  <div class="entry-header">
+    <h3>Ben-Gurion University - Teaching Assistant</h3>
+    <img src="BGU_logo.png" alt="Ben-Gurion University Logo" class="entry-logo">
+  </div>
   <p><em>2020 - 2023</em></p>
   <ul>
     <li><strong>Algorithms and Graph Theory</strong> (2023)</li>
@@ -302,19 +335,29 @@
       <header class="section-header text-center">
         <h2><i class="bi bi-journal-text"></i> Publications</h2>
       </header>
-      <!-- Publication 1: On Progress - Innovative Benchmark -->
+      <!-- Publication 1: HiMu -->
       <div class="entry">
-        <h3>On Progress - Innovative Benchmark and Plug-and-Play Frame Selection Method for Long-Video Question Answering</h3>
-        <p><em>Dan Ben Ami, Gabrielle Serrusi, Kobi Cohen, Chaim Baskin</em></p>
-        <p><em>In preparation, 2025</em></p>
-        <p>We are developing a novel Video Question Answering (VideoQA) benchmark. Alongside, we are designing a plug-and-play frame selection module that can integrate into existing VideoQA models to improve efficiency and accuracy by dynamically selecting the most relevant frames during inference.</p>
+        <h3>HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering <a href="https://danbenami.github.io/HiMu.io/" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
+        <p><em>Dan Ben-Ami, Gabriele Serussi, Kobi Cohen, Chaim Baskin</em></p>
+        <p><em>Under review, 2026</em></p>
+        <p>We introduce HiMu, a training-free hierarchical multimodal frame selection framework for long-video QA that decomposes queries into logic trees with specialized experts, advancing the efficiency-accuracy Pareto front while requiring ~10x fewer FLOPs than agentic systems.</p>
+        <img src="himu_pipe3_with_vid_streams_wb.png" alt="HiMu Pipeline" class="img-fluid rounded" style="width: 50%; height: auto;" />
+      </div>
+
+      <!-- Publication 2: HERBench -->
+      <div class="entry">
+        <h3>HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering <a href="https://gabrieleserussi.github.io/HERBench/" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
+        <p><em>Dan Ben-Ami, Gabriele Serussi, Kobi Cohen, Chaim Baskin</em></p>
+        <p><em>Accepted to CVPR, 2026</em></p>
+        <p>We present HERBench, a VideoQA benchmark for multi-evidence integration across time, requiring aggregating multiple non-overlapping evidential cues. Evaluating 13 state-of-the-art Video-LLMs reveals pervasive failures (31-42% accuracy vs. 20% random baseline), disentangled into retrieval and fusion deficits.</p>
+        <img src="Teaser_plot.png" alt="HERBench Teaser Plot" class="img-fluid rounded" style="width: 50%; height: auto;" />
       </div>
 
       <!-- Publication 2: Stable Polygamy Approach -->
       <div class="entry">
         <h3>A Stable Polygamy Approach to Spectrum Access with Channel Reuse <a href="https://arxiv.org/pdf/2408.12402" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
         <p><em>Dan Ben Ami, Kobi Cohen</em></p>
-        <p><em>Under review, IEEE Transactions on Communications (TCOM), 2024</em></p>
+        <p><em>In preprint, 2024</em></p>
         <p>I introduced the "Stable Polygamy Problem" (SPP) for spectrum access with channel reuse, developed efficient algorithms including RP&R, and proved their performance in specific interference regimes with strong simulation results.</p>
       </div>
 
@@ -324,7 +367,7 @@
         <p><em>Dan Ben Ami, Kobi Cohen, Qing Zhao</em></p>
         <p><em>IEEE Access, 2025</em></p>
         <p>I developed a multi-armed bandit–based algorithm (BSFL) for federated learning that balances training latency and model generalization, achieving logarithmic regret and outperforming prior methods on synthetic and real datasets.</p>
-        <img src="FL_time.png" alt="Client Selection Publication Image" class="img-fluid rounded shadow" style="width: 50%; height: auto;" />
+        <img src="FL_time.png" alt="Client Selection Publication Image" class="img-fluid rounded" style="width: 50%; height: auto;" />
       </div>
 
       <!-- Publication 3: Universal System for Boosting Gene Expression -->
