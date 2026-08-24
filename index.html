@@ -1,506 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Resume</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Google Fonts (Optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Mulish', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    /* Remove extra space between sections but still allow some padding */
-    section {
-      padding: 60px 0;
-      /* This property makes the browser offset the scroll position,
-         ensuring the section header isn’t hidden behind the fixed navbar. */
-      scroll-margin-top: 80px;
-    }
-    /* Top section (hero) styling with background image and overlay */
-    .top-section {
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      color: white;
-      text-align: left;
-      padding: 80px 0;
-    }
-    .top-section::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .top-section-content {
-      position: relative;
-      z-index: 2;
-    }
-    /* Section header styling */
-    .section-header {
-      margin-bottom: 30px;
-    }
-    .section-header i {
-      color: #007bff;
-      margin-right: 8px;
-    }
-    /* Entry block styling for work, academic, projects, etc. */
-    .entry {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    .entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .entry-logo {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-      margin-left: 15px;
-      flex-shrink: 0;
-    }
-    .project-entry {
-      border-top: 1px solid #ddd;
-      margin-top: 15px;
-      padding-top: 15px;
-    }
-    .media-placeholder {
-      margin-top: 10px;
-      max-width: 100%;
-      height: auto;
-    }
-    /* Make all videos the same width and responsive */
-    .responsive-video {
-      width: 60%;
-      height: auto;
-      display: block;
-      margin: 10px auto 0;
-    }
-    @media (max-width: 768px) {
-      .responsive-video {
-        width: 100%;
-      }
-    }
-    /* Navbar adjustments */
-    .navbar-brand {
-      font-weight: bold;
-    }
-    /* Special styling for About Me section to position it closer to the photo */
-    #about-me {
-      padding-top: 20px;
-      margin-top: -80px;
-    }
-  </style>
-</head>
-<body id="page-top">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dan Ben Ami — AI Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#292929;
+    --muted:#6f7378;
+    --line:#e6e8ea;
+    --accent:#2f6f8f;
+    --accent-soft:#eaf2f6;
+    --bg:#ffffff;
+    --bg-alt:#f7f8f9;
+    --max:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);background:var(--bg);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="#page-top"><i class="bi bi-house-fill"></i> Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about-me"><i class="bi bi-person-fill"></i> About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#work-experience"><i class="bi bi-briefcase-fill"></i> Work Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#education"><i class="bi bi-mortarboard-fill"></i> Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#publications"><i class="bi bi-journal-text"></i> Publications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#programming-languages"><i class="bi bi-code-slash"></i> Programming </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#soft-skills"><i class="bi bi-chat-dots-fill"></i> Soft Skills</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#awards"><i class="bi bi-trophy-fill"></i> Awards</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="#contact-info"><i class="bi bi-envelope-fill"></i> Contact</a>
-          </li>
+  /* ---------- masthead ---------- */
+  .masthead{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+    backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);
+  }
+  .masthead-inner{
+    max-width:var(--max);margin:0 auto;padding:0 24px;height:58px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .masthead-name{font-weight:700;font-size:1.05rem;letter-spacing:.2px;color:var(--ink);}
+  .masthead nav{display:flex;gap:4px;flex-wrap:wrap;}
+  .masthead nav a{
+    color:var(--muted);font-size:.92rem;padding:7px 11px;border-radius:5px;font-weight:600;
+  }
+  .masthead nav a:hover{color:var(--accent);background:var(--accent-soft);text-decoration:none;}
+  .menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:6px;padding:6px 10px;font-size:1.1rem;cursor:pointer;}
+
+  /* ---------- layout ---------- */
+  .wrap{max-width:var(--max);margin:0 auto;padding:38px 24px 80px;display:grid;grid-template-columns:265px 1fr;gap:52px;align-items:start;}
+
+  /* ---------- author sidebar ---------- */
+  .author{position:sticky;top:96px;text-align:center;}
+  .author img.avatar{width:212px;height:212px;object-fit:cover;object-position:50% 12%;border-radius:50%;border:5px solid #fff;box-shadow:0 4px 22px rgba(0,0,0,.14);}
+  .author h1{font-size:1.5rem;margin:18px 0 2px;font-weight:700;letter-spacing:-.2px;}
+  .author .role{color:var(--ink);font-weight:600;font-size:.98rem;margin:0 0 2px;}
+  .author .affil{color:var(--muted);font-size:.9rem;margin:0;}
+  .author ul{list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--line);text-align:left;}
+  .author li{border-bottom:1px solid var(--line);}
+  .author li a{display:flex;align-items:center;gap:10px;padding:10px 4px;color:var(--muted);font-size:.92rem;font-weight:600;}
+  .author li a:hover{color:var(--accent);text-decoration:none;}
+  .author li svg{width:16px;height:16px;flex:0 0 16px;fill:currentColor;}
+
+  /* ---------- content ---------- */
+  main section{margin-bottom:54px;scroll-margin-top:78px;}
+  main h2{
+    font-size:1.05rem;text-transform:uppercase;letter-spacing:.13em;font-weight:700;color:var(--muted);
+    border-bottom:1px solid var(--line);padding-bottom:9px;margin:0 0 24px;
+  }
+  main h3{font-size:1.16rem;margin:0;font-weight:700;letter-spacing:-.1px;}
+  main h4{font-size:1.02rem;margin:0 0 6px;font-weight:700;color:var(--accent);}
+  p{margin:0 0 12px;}
+  .lede{font-size:1.1rem;}
+  ul.bul{margin:8px 0 0;padding-left:20px;}
+  ul.bul li{margin-bottom:7px;}
+  .meta{color:var(--muted);font-size:.9rem;margin:2px 0 10px;}
+
+  .item{padding:0 0 26px;margin-bottom:26px;border-bottom:1px solid var(--line);}
+  .item:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0;}
+  .item-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;}
+  .logo{height:34px;width:auto;max-width:130px;object-fit:contain;flex-shrink:0;margin-top:2px;opacity:.9;}
+
+  .sub{margin-top:20px;padding-left:18px;border-left:2px solid var(--accent-soft);}
+  .sub + .sub{margin-top:22px;}
+
+  .cap{font-size:.86rem;color:var(--muted);margin:14px 0 6px;font-style:italic;}
+  video.media,img.media{width:100%;max-width:520px;border-radius:6px;border:1px solid var(--line);display:block;}
+  img.media.gif{max-width:240px;}
+
+  /* publications */
+  .pub{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start;
+       padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid var(--line);}
+  .pub:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0;}
+  .pub-thumb{width:180px;height:120px;border-radius:5px;border:1px solid var(--line);object-fit:cover;object-position:center;background:#fff;}
+  .pub-thumb.blank{
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;
+    background:linear-gradient(135deg,#f2f6f8,#e7eef2);color:var(--accent);
+    font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;
+  }
+  .pub h3{font-size:1.08rem;line-height:1.35;}
+  .pub h3 a{color:var(--ink);}
+  .pub h3 a:hover{color:var(--accent);text-decoration:none;}
+  .pub h3 a span{color:var(--accent);font-size:.95em;}
+  .authors{font-size:.93rem;color:#3f4245;margin:5px 0 1px;}
+  .authors b{color:var(--ink);}
+  .venue{font-size:.9rem;color:var(--muted);font-style:italic;margin:0 0 8px;}
+  .venue .badge{
+    font-style:normal;background:var(--accent-soft);color:var(--accent);font-weight:700;
+    font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-right:7px;
+  }
+  .pub p.abs{font-size:.95rem;margin:0;}
+
+  /* skills */
+  .kv{display:grid;grid-template-columns:200px 1fr;gap:6px 18px;font-size:.97rem;}
+  .kv dt{font-weight:700;}
+  .kv dd{margin:0;color:#41454a;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+  .chip{background:var(--bg-alt);border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:.9rem;}
+
+  footer{border-top:1px solid var(--line);padding:26px 24px;text-align:center;color:var(--muted);font-size:.87rem;}
+
+  @media(max-width:900px){
+    .wrap{grid-template-columns:1fr;gap:34px;padding-top:26px;}
+    .author{position:static;}
+    .author img.avatar{width:168px;height:168px;}
+    .author ul{max-width:340px;margin-left:auto;margin-right:auto;}
+    .masthead nav{display:none;position:absolute;top:58px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:8px 16px 14px;}
+    .masthead nav.open{display:flex;}
+    .menu-btn{display:block;}
+    .pub{grid-template-columns:1fr;}
+    .pub-thumb{width:100%;max-width:340px;height:auto;aspect-ratio:3/2;}
+    .kv{grid-template-columns:1fr;gap:2px;}
+    .kv dd{margin-bottom:10px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="masthead-name" href="#top">Dan Ben Ami</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.masthead nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
+      <a href="#programming">Programming</a>
+      <a href="#soft-skills">Soft Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="author">
+    <img class="avatar" src="Dan_suit.jpg" alt="Dan Ben Ami" />
+    <h1>Dan Ben Ami</h1>
+    <p class="role">AI Researcher &amp; Algorithm Developer</p>
+    <p class="affil">Ph.D. Candidate, Ben-Gurion University</p>
+    <p class="affil">CV Data Scientist PhD Intern, Microsoft</p>
+    <ul>
+      <li><a href="mailto:danbenami3@gmail.com">
+        <svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/></svg>
+        danbenami3@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/dan-ben-ami/" target="_blank">
+        <svg viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+        LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=OmIy5cgAAAAJ&hl=iw&oi=ao" target="_blank">
+        <svg viewBox="0 0 16 16"><path d="M8 0 0 4l8 4 6.5-3.25V11h1.5V4L8 0zM3 7.5v3.2c0 1.4 2.24 2.8 5 2.8s5-1.4 5-2.8V7.5L8 10 3 7.5z"/></svg>
+        Google Scholar</a></li>
+    </ul>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="lede"><strong>AI researcher specializing in deep learning, computer vision, and vision-language models (VLMs).</strong></p>
+      <p>I design and build innovative, scalable AI systems and complex pipelines, integrating creative problem-solving with expertise in multimodal learning, algorithm optimization, and end-to-end system design for real-world impact.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Work Experience</h2>
+
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <h3>Computer Vision Data Scientist, PhD Intern</h3>
+            <p class="meta">Microsoft · WSSI · Nov 2025 – Present</p>
+          </div>
+          <img class="logo" src="Microsoft_logo.svg" alt="Microsoft" />
+        </div>
+        <ul class="bul">
+          <li>Engineered edge-constrained image restoration pipelines, adapting SOTA backbones (NAFNet, HAT) via Knowledge Distillation to bridge the gap between high-capacity teacher models (+3.5 dB PSNR) and strictly bounded edge architectures.</li>
+          <li>Formulated domain-adaptive distillation criteria and hybrid loss objectives, dynamically coupling teacher supervision with ground-truth signals to achieve a +0.7 dB PSNR boost under fixed latency and memory footprints.</li>
+          <li>Designed auxiliary loss functions targeting localized reconstruction artifacts (chessboard, ringing) during denoising and super-resolution, significantly boosting perceptual quality and Mean Opinion Scores (MOS).</li>
+        </ul>
+        <p class="cap">Example of denoising with the off-the-shelf NAFNet model (Chen et al., ECCV 2022), as my own work's data is confidential.</p>
+        <img class="media gif" src="denoise_nafnet.gif" alt="Denoising example using NAFNet" />
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <h3>Computer Vision &amp; AI Algorithm Developer</h3>
+            <p class="meta">Elop · Feb 2023 – Oct 2025</p>
+          </div>
+          <img class="logo" src="elop.jpg" alt="Elop" />
+        </div>
+        <ul class="bul">
+          <li>Performed a diverse range of Computer Vision and Vision-Language tasks and developed a deep understanding of various state-of-the-art (SOTA) models and architectures.</li>
+          <li>Received project requirements and system constraints, then designed, optimized, and integrated custom algorithmic pipelines into larger systems.</li>
+          <li>Conducted extensive literature reviews—evaluating over 70 research papers annually on customized data with numerical performance metrics.</li>
+        </ul>
+
+        <div class="sub">
+          <h4>Scene Understanding and Threat Recognition System</h4>
+          <ul class="bul">
+            <li>Built an end-to-end pipeline that ingests multi-object tracking outputs and leverages Video-LLMs for complex-scene understanding and per-object threat scoring.</li>
+            <li>Led a 3-person project; authored and executed a one-year roadmap (versioning, scope per release, task allocation) to deliver the project.</li>
+            <li>Benchmarked multimodal models from 3B–78B (Qwen2.5-VL, LLaVA-OV, etc.) on multiple datasets, comparing accuracy and runtime/latency to select deployment candidates.</li>
+          </ul>
+        </div>
+
+        <div class="sub">
+          <h4>Multi-Object (Multi-Sensor) Tracking</h4>
+          <ul class="bul">
+            <li>Developed a tracking solution that increased precision from 72% (naive off-the-shelf YOLO+DeepSORT pipeline) to 93% using a customized pipeline.</li>
+            <li>Integrated an ensemble of video classification models (MViT, TimeSFormer, etc.) focused on reducing false alarm rates.</li>
+            <li>Implemented a three-sensor tracking system (RGB, SWIR, MWIR) to ensure robust performance across different imaging modalities.</li>
+          </ul>
+          <p class="cap">Visualization of simple basic off-the-shelf multi-object tracking in RGB (Vis) sensor without the full pipeline (due to IP and confidentiality).</p>
+          <video class="media" controls loop muted autoplay playsinline webkit-playsinline>
+            <source src="cam1_visualized_compressed.mp4" type="video/mp4" /></video>
+        </div>
+
+        <div class="sub">
+          <h4>Zero-Shot Keypoint Tracking</h4>
+          <ul class="bul">
+            <li>Explored zero-shot tracking for keypoints in infrared videos characterized by extreme noise conditions.</li>
+            <li>Utilized simulative data generated with UE5 specifically for testing under high interference scenarios.</li>
+            <li>Rigorously evaluated SOTA models to determine limitations and ensure their suitability under adverse conditions.</li>
+          </ul>
+          <p class="cap">Visualization of tracking keypoints on a passenger airplane from standard RGB (no noise) video (due to IP and confidentiality).</p>
+          <video class="media" controls loop muted autoplay playsinline webkit-playsinline>
+            <source src="airplane_tracked.mp4" type="video/mp4" /></video>
+        </div>
+
+        <div class="sub">
+          <h4>Video Restoration and Super Resolution</h4>
+          <ul class="bul">
+            <li>Investigated and compared multiple SOTA models, including a self-designed architecture and a self-trained model.</li>
+            <li>Applied knowledge distillation from a FeMaSR teacher model to optimize the chosen architecture.</li>
+            <li>Achieved performance improvements of 5–20% over classical methods, as measured by metrics such as MTF, SSIM, and ESF.</li>
+          </ul>
+          <p class="cap">Demonstration of video restoration and turbulence mitigation. This output is from the DATUM model (Zhang et al., CVPR 2024), as my own work's data is confidential.</p>
+          <video class="media" controls loop muted autoplay playsinline webkit-playsinline>
+            <source src="turbulence_mitigation.mp4" type="video/mp4" /></video>
+        </div>
+
+        <div class="sub">
+          <h4>Video Classification for False Target Filtering</h4>
+          <ul class="bul">
+            <li>Designed a comprehensive data management infrastructure for experimental model training and evaluation.</li>
+            <li>Developed tools for dynamic data integration, version management, attribute-based filtering, and complex augmentations (e.g., smart copy-paste and 3D rotations relative to the camera plane).</li>
+            <li>Conducted hundreds of training experiments across both lightweight and heavy SOTA architectures, rigorously evaluating each component (data version, augmentations, architecture, transfer learning, etc.).</li>
+            <li>Increased overall accuracy by 22%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <h3>Teaching Assistant</h3>
+            <p class="meta">Ben-Gurion University · 2020 – 2023</p>
+          </div>
+          <img class="logo" src="BGU_logo.png" alt="Ben-Gurion University" />
+        </div>
+        <ul class="bul">
+          <li><strong>Algorithms and Graph Theory</strong> (2023)</li>
+          <li><strong>Digital Design</strong> (2022)</li>
+          <li><strong>Digital Computers Structure</strong> (2022)</li>
+          <li><strong>Linear Algebra</strong> (2020–2021)</li>
         </ul>
       </div>
-    </div>
-  </nav>
+    </section>
 
-  <!-- Top Section (Hero) -->
-  <section class="top-section" id="page-top">
-    <div class="top-section-content container">
-      <div class="row align-items-center">
-        <!-- Left column: Name and Profession -->
-        <div class="col-md-8">
-          <h1 class="display-4">Dan Ben Ami</h1>
-          <p class="lead">AI Researcher & Algorithm Developer</p>
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <article class="pub">
+        <img class="pub-thumb" src="himu_pipe3_with_vid_streams_wb.png" alt="HiMu pipeline" />
+        <div>
+          <h3><a href="https://danbenami.github.io/HiMu.io/" target="_blank">HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors"><b>Dan Ben-Ami</b>, Gabriele Serussi, Kobi Cohen, Chaim Baskin</p>
+          <p class="venue"><span class="badge">Under review</span>2026</p>
+          <p class="abs">We introduce HiMu, a training-free hierarchical multimodal frame selection framework for long-video QA that decomposes queries into logic trees with specialized experts, advancing the efficiency–accuracy Pareto front while requiring ~10× fewer FLOPs than agentic systems.</p>
         </div>
-        <!-- Right column: Optional Photo -->
-        <div class="col-md-4 text-center">
-          <img src="Dan_suit.jpg" alt="Your Photo" class="img-fluid rounded-circle shadow">
+      </article>
+
+      <article class="pub">
+        <img class="pub-thumb" src="Teaser_plot.png" alt="HERBench teaser" />
+        <div>
+          <h3><a href="https://gabrieleserussi.github.io/HERBench/" target="_blank">HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors"><b>Dan Ben-Ami</b>, Gabriele Serussi, Kobi Cohen, Chaim Baskin</p>
+          <p class="venue"><span class="badge">CVPR</span>2026</p>
+          <p class="abs">We present HERBench, a VideoQA benchmark for multi-evidence integration across time, requiring aggregating multiple non-overlapping evidential cues. Evaluating 13 state-of-the-art Video-LLMs reveals pervasive failures (31–42% accuracy vs. 20% random baseline), disentangled into retrieval and fusion deficits.</p>
         </div>
+      </article>
+
+      <article class="pub">
+        <img class="pub-thumb" src="FL_time.png" alt="Federated learning results" />
+        <div>
+          <h3><a href="https://ieeexplore.ieee.org/abstract/document/10891761" target="_blank">Client Selection for Generalization in Accelerated Federated Learning: A Multi-Armed Bandit Approach <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors"><b>Dan Ben Ami</b>, Kobi Cohen, Qing Zhao</p>
+          <p class="venue"><span class="badge">IEEE Access</span>2025</p>
+          <p class="abs">I developed a multi-armed bandit–based algorithm (BSFL) for federated learning that balances training latency and model generalization, achieving logarithmic regret and outperforming prior methods on synthetic and real datasets.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb blank">Spectrum<br>Access</div>
+        <div>
+          <h3><a href="https://arxiv.org/pdf/2408.12402" target="_blank">A Stable Polygamy Approach to Spectrum Access with Channel Reuse <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors"><b>Dan Ben Ami</b>, Kobi Cohen</p>
+          <p class="venue"><span class="badge">Preprint</span>2024</p>
+          <p class="abs">I introduced the "Stable Polygamy Problem" (SPP) for spectrum access with channel reuse, developed efficient algorithms including RP&amp;R, and proved their performance in specific interference regimes with strong simulation results.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb blank">Video-Text<br>Retrieval</div>
+        <div>
+          <h3>VEDJE: Video-Efficient Discriminative Joint Encoder for Scalable Video-Text Retrieval</h3>
+          <p class="authors">S. Wagner, G. Serussi, <b>D. Ben-Ami</b>, T. Galanti, C. Baskin</p>
+          <p class="venue"><span class="badge">ICML Workshop</span>AdaptFM: Resource-Adaptive Foundation Model Inference</p>
+          <p class="abs">An efficient joint video-text encoder that makes discriminative video-text retrieval scalable under tight inference budgets.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb blank">Federated<br>Learning</div>
+        <div>
+          <h3><a href="https://arxiv.org/abs/2503.13173" target="_blank">PAUSE: Low-Latency and Privacy-Aware Active User Selection for Federated Learning <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors">Ori Peleg, Natalie Lang, <b>Dan Ben Ami</b>, Stefano Rini, Nir Shlezinger, Kobi Cohen</p>
+          <p class="venue"><span class="badge">IEEE Trans. Signal Processing</span>Vol. 73, 4556–4572, 2025</p>
+          <p class="abs">PAUSE jointly addresses privacy-leakage accumulation and communication latency in federated learning via a multi-armed bandit algorithm for active user selection, with a theoretical reward-growth analysis and a simulated-annealing relaxation for reduced complexity.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb blank">Gene<br>Expression</div>
+        <div>
+          <h3><a href="https://www.nature.com/articles/s41467-024-46573-5.pdf" target="_blank">A Universal System for Boosting Gene Expression in Eukaryotic Cell-Lines <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors">Inbal Vaknin, Or Willinger, Jonathan Mandl, Hadar Heuberger, <b>Dan Ben-Ami</b>, Yi Zeng, Sarah Goldberg, Yaron Orenstein, Roee Amit</p>
+          <p class="venue"><span class="badge">Nature Communications</span>2024</p>
+          <p class="abs">Designed and trained deep learning models to predict protein expression from DNA sequences, guiding motif selection for cross-species promoter boosting.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb blank">Regulatory<br>Grammar</div>
+        <div>
+          <h3><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4412621" target="_blank">Characterizing Regulatory Grammar Rules in S. cerevisiae Using a Library of Conserved and Unknown Motifs <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors">Inbal Vaknin, Hadar Heuberger, <b>Dan Ben-Ami</b>, Or Wilinger, Yi Zeng, Leon Anavy, Zohar Yakhini, Sarah Goldberg, Yaron Orenstein, Roee Amit</p>
+          <p class="venue"><span class="badge">Cerevisiae</span>2023</p>
+          <p class="abs">Developed convolutional neural network models to predict gene expression from DNA sequences, enabling validation of conserved transcriptional grammar rules.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Ph.D. in Electrical &amp; Computer Engineering</h3>
+        <p class="meta">Ben-Gurion University · 2024 – Present</p>
+        <p><strong>Lab:</strong> <a href="https://insight.bgu.ac.il/" target="_blank">InsightLab <span aria-hidden="true">↗</span></a><br>
+           <strong>Advisors:</strong> Dr. Chaim Baskin, Prof. Kobi Cohen</p>
+        <p>Combined Track for top-performing students.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- About Me Section -->
-  <section id="about-me">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-person-circle"></i> About Me</h2>
-      </header>
-      <div class="entry">
-        <p><strong>AI researcher specializing in deep learning, computer vision, and vision-language models (VLMs).  </strong> </p>
-        <p> I design and build innovative, scalable AI systems and complex pipelines, integrating creative problem-solving with expertise in multimodal learning, algorithm optimization, and end-to-end system design for real-world impact. </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Work Experience Section -->
-  <section id="work-experience" class="bg-light">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-briefcase"></i> Work Experience</h2>
-      </header>
-
-<!-- Work Entry 1: Microsoft -->
-<div class="entry">
-  <div class="entry-header">
-    <h3>Microsoft - Computer Vision Data Scientist PhD Intern</h3>
-    <img src="Microsoft_logo.svg" alt="Microsoft Logo" class="entry-logo">
-  </div>
-  <p><em>Nov/2025 - Present | WSSI</em></p>
-  <ul>
-    <li>Developing a production-grade image super resolution and restoration system as part of a cross-functional team.</li>
-    <li>Conducting comprehensive literature reviews and benchmarking CNN-based and Transformer-based architectures on internal datasets.</li>
-    <li>Training, fine-tuning, and optimizing models, including knowledge distillation techniques to compress high-performing architectures for deployment.</li>
-    <li>Designing and executing rigorous evaluation pipelines to assess model quality across perceptual and fidelity metrics.</li>
-  </ul>
-</div>
-
-<!-- Work Entry 2: Elop -->
-<div class="entry">
-  <div class="entry-header">
-    <h3>Elop - Computer Vision & AI Algorithm Developer</h3>
-    <img src="elop.jpg" alt="Elop Logo" class="entry-logo">
-  </div>
-  <p><em>Feb/2023 - Oct/2025</em></p>
-  <ul>
-    <li>Performed a diverse range of Computer Vision and Vision-Languege tasks and developed a deep understanding of various state-of-the-art (SOTA) models and architectures.</li>
-    <li>Received project requirements and system constraints, then designed, optimized, and integrated custom algorithmic pipelines into larger systems.</li>
-    <li>Conducted extensive literature reviews—evaluating over 70 research papers annually on customized data with numerical performance metrics.</li>
-  </ul>
-
-  <!-- Project 1: Multi-Object (Multi-Sensor) Tracking -->
-  <div class="project-entry">
-    <h4>Scene Understanding and Threat Recognition System</h4>
-    <ul>
-      <li>Built an end-to-end pipeline that ingests multi-object tracking outputs and leverages Video-LLMs for complex-scene understanding and per-object threat scoring.</li>
-      <li>Led a 3-person project; authored and executed a one-year roadmap (versioning, scope per release, task allocation) to deliver the project.</li>
-      <li>Benchmarked multimodal models from 3B–78B (qwen2.5-VL, LLaVA-OV, etc.) on multiple datasets, comparing accuracy and runtime/latency to select deployment candidates.</li>
-    </ul>
-  </div>
-
-  <!-- Project 2: Multi-Object (Multi-Sensor) Tracking -->
-  <div class="project-entry">
-    <h4>Multi-Object (Multi-Sensor) Tracking</h4>
-    <ul>
-      <li>Developed a tracking solution that increased precision from 72% (naive off-the-shelf YOLO+DeepSORT pipeline) to 93% using a customized pipeline.</li>
-      <li>Integrated an ensemble of video classification models (MViT, TimeSFormer, etc.) focused on reducing false alarm rates.</li>
-      <li>Implemented a three-sensor tracking system (RGB, SWIR, MWIR) to ensure robust performance across different imaging modalities.</li>
-    </ul>
-    <!-- Video Description -->
-    <p><strong>Video Description:</strong> Visualization of simple basic off-the-shelf multi-object tracking in RGB (Vis) sensor without the full pipeline (Due to IP and confidentiality). </p>
-    <!-- Media Placeholder -->
-    <video class="responsive-video" controls loop muted autoplay playsinline webkit-playsinline>
-      <source src="cam1_visualized_compressed.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Project 3: Zero-Shot Keypoint Tracking -->
-  <div class="project-entry">
-    <h4>Zero-Shot Keypoint Tracking</h4>
-    <ul>
-      <li>Explored zero-shot tracking for keypoints in infrared videos characterized by extreme noise conditions.</li>
-      <li>Utilized simulative data generated with UE5 specifically for testing under high interference scenarios.</li>
-      <li>Rigorously evaluated SOTA models to determine limitations and ensure their suitability under adverse conditions.</li>
-    </ul>
-    <!-- Video Description -->
-    <p><strong>Video Description:</strong> Visualization of tracking keypoints on a passenger airplane from standart RGB (no noise) video (Due to IP and confidentiality).</p>
-    <!-- Media Placeholder -->
-    <video class="responsive-video" controls loop muted autoplay playsinline webkit-playsinline>
-      <source src="airplane_tracked.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Project 4: Video Restoration and Super Resolution -->
-  <div class="project-entry">
-    <h4>Video Restoration and Super Resolution</h4>
-    <ul>
-      <li>Investigated and compared multiple SOTA models, including a self-designed architecture and a self-trained model.</li>
-      <li>Applied knowledge distillation from a FeMaSR teacher model to optimize the chosen architecture.</li>
-      <li>Achieved performance improvements of 5–20% over classical methods, as measured by metrics such as MTF, SSIM, and ESF.</li>
-    </ul>
-    <!-- Video Description -->
-    <p><strong>Video Description:</strong> Demonstration of video restoration and turbulence mitigation. This output is from the DATUM model (Zhang et al., CVPR 2024), as my own work’s data is confidential.</p>
-    <!-- Media Placeholder -->
-    <video class="media-placeholder responsive-video" controls loop muted autoplay playsinline webkit-playsinline>
-      <source src="turbulence_mitigation.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Project 5: Video Classification for False Target Filtering -->
-  <div class="project-entry">
-    <h4>Video Classification for False Target Filtering</h4>
-    <ul>
-      <li>Designed a comprehensive data management infrastructure for experimental model training and evaluation.</li>
-      <li>Developed tools for dynamic data integration, version management, attribute-based filtering, and complex augmentations (e.g., smart copy-paste and 3D rotations relative to the camera plane).</li>
-      <li>Conducted hundreds of training experiments across both lightweight and heavy SOTA architectures, rigorously evaluating each component (data version, augmentations, architecture, transfer learning, etc.).</li>
-      <li>Increased overall accuracy by 22%.</li>
-    </ul>    
-  </div>
-</div>
-
-  <!-- Work Entry 3: Teaching Assistant -->
-<div class="entry">
-  <div class="entry-header">
-    <h3>Ben-Gurion University - Teaching Assistant</h3>
-    <img src="BGU_logo.png" alt="Ben-Gurion University Logo" class="entry-logo">
-  </div>
-  <p><em>2020 - 2023</em></p>
-  <ul>
-    <li><strong>Algorithms and Graph Theory</strong> (2023)</li>
-    <li><strong>Digital Design</strong> (2022)</li>
-    <li><strong>Digital Computers Structure</strong> (2022)</li>
-    <li><strong>Linear Algebra</strong> (2020-2021)</li>
-  </ul>
-</div>
-
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="bg-light">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-mortarboard"></i> Education</h2>
-      </header>
-      <!-- Ph.D. Degree -->
-      <div class="entry">
-        <h3>Ph.D. in Electrical and Computer Engineering</h3>
-        <p><em>Ben-Gurion University, 2021 – Present</em></p>
-        <p><strong>Lab:</strong> InsightLab <a href="https://insight.bgu.ac.il/" target="_blank" class="text-decoration-none"><i class="bi bi-box-arrow-up-right"></i></a></p>
-        <p><strong>GPA:</strong> 97</p>
-        <p><strong>Advisors:</strong> Prof. Kobi Cohen (2021–present), Dr. Chaim Baskin (2024–present)</p>
-        <p>Accelerated Ph.D. program for top-performing students.</p>
+      <div class="item">
+        <h3>M.Sc. in Electrical &amp; Computer Engineering</h3>
+        <p class="meta">Ben-Gurion University · 2021 – 2023</p>
+        <p><strong>Advisor:</strong> Prof. Kobi Cohen<br>
+           <strong>GPA:</strong> 97<br>
+           <strong>Honors:</strong> Summa Cum Laude</p>
+        <p>Accelerated Direct M.Sc. program for top-performing students.</p>
         <p><strong>Main courses:</strong> Deep learning, Sequential learning, Statistical inference and Data Mining, Multivariate statistical data analysis, Game theory.</p>
       </div>
-      <!-- B.Sc Degree -->
-      <div class="entry">
-        <h3>B.Sc in Computer Engineering</h3>
-        <p><em>Ben-Gurion University, 2018 – 2022</em></p>
-        <p><strong>GPA:</strong> 92</p>
-        <p><strong>Honors:</strong> Summa Cum Laude (in the dean's list)</p>
-        <p><strong>Ranking:</strong> Ranked #1 in my class (2018–2022 BGU CE)</p>
-        <p><strong>Research:</strong> Researched computational modeling of protein-DNA/RNA interactions using deep learning models, guided by Dr. Yaron Orenstein.</p>
+      <div class="item">
+        <h3>B.Sc. in Computer Engineering</h3>
+        <p class="meta">Ben-Gurion University · 2018 – 2022</p>
+        <p><strong>GPA:</strong> 92<br>
+           <strong>Honors:</strong> Summa Cum Laude (dean's list)<br>
+           <strong>Ranking:</strong> Ranked #1 in my class (2018–2022 BGU CE)</p>
+        <p><strong>Research:</strong> Computational modeling of protein-DNA/RNA interactions using deep learning models, guided by Dr. Yaron Orenstein.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Publications Section -->
-  <section id="publications">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-journal-text"></i> Publications</h2>
-      </header>
-      <!-- Publication 1: HiMu -->
-      <div class="entry">
-        <h3>HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering <a href="https://danbenami.github.io/HiMu.io/" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
-        <p><em>Dan Ben-Ami, Gabriele Serussi, Kobi Cohen, Chaim Baskin</em></p>
-        <p><em>Under review, 2026</em></p>
-        <p>We introduce HiMu, a training-free hierarchical multimodal frame selection framework for long-video QA that decomposes queries into logic trees with specialized experts, advancing the efficiency-accuracy Pareto front while requiring ~10x fewer FLOPs than agentic systems.</p>
-        <img src="himu_pipe3_with_vid_streams_wb.png" alt="HiMu Pipeline" class="img-fluid rounded" style="width: 50%; height: auto;" />
+    <section id="programming">
+      <h2>Programming</h2>
+      <dl class="kv">
+        <dt>Programming Languages</dt><dd>Python, C++, MATLAB, Bash</dd>
+        <dt>Deep Learning Frameworks</dt><dd>PyTorch, TensorFlow, Keras</dd>
+        <dt>Computer Vision &amp; VLMs</dt><dd>OpenCV, Hugging Face Transformers, vLLM, CLIP, LLaVA, Qwen, SAM, YOLO</dd>
+        <dt>Data Processing &amp; Analysis</dt><dd>NumPy, Pandas, scikit-learn, SciPy</dd>
+        <dt>Visualization</dt><dd>Matplotlib, Plotly, TensorBoard</dd>
+        <dt>Optimization &amp; MLOps</dt><dd>PyTorch Lightning, Hydra, ONNX, Torch-TensorRT</dd>
+        <dt>Tools &amp; Environments</dt><dd>Docker, Git, Linux, Conda, Jupyter</dd>
+      </dl>
+    </section>
+
+    <section id="soft-skills">
+      <h2>Soft Skills</h2>
+      <div class="chips">
+        <span class="chip">Creative problem-solving and innovation in AI system design</span>
+        <span class="chip">Strong analytical and critical thinking abilities</span>
+        <span class="chip">Cross-disciplinary collaboration and communication</span>
+        <span class="chip">Rapid learning and adaptation to emerging technologies</span>
+        <span class="chip">Translating research concepts into practical, scalable solutions</span>
+        <span class="chip">Project planning and execution in complex, multi-stage pipelines</span>
+        <span class="chip">Mentoring and knowledge sharing in technical teams</span>
+        <span class="chip">Attention to detail while maintaining big-picture perspective</span>
       </div>
+    </section>
 
-      <!-- Publication 2: HERBench -->
-      <div class="entry">
-        <h3>HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering <a href="https://gabrieleserussi.github.io/HERBench/" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
-        <p><em>Dan Ben-Ami, Gabriele Serussi, Kobi Cohen, Chaim Baskin</em></p>
-        <p><em>Accepted to CVPR, 2026</em></p>
-        <p>We present HERBench, a VideoQA benchmark for multi-evidence integration across time, requiring aggregating multiple non-overlapping evidential cues. Evaluating 13 state-of-the-art Video-LLMs reveals pervasive failures (31-42% accuracy vs. 20% random baseline), disentangled into retrieval and fusion deficits.</p>
-        <img src="Teaser_plot.png" alt="HERBench Teaser Plot" class="img-fluid rounded" style="width: 50%; height: auto;" />
-      </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:danbenami3@gmail.com">danbenami3@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/dan-ben-ami/" target="_blank">Dan Ben Ami</a></p>
+    </section>
 
-      <!-- Publication 2: Stable Polygamy Approach -->
-      <div class="entry">
-        <h3>A Stable Polygamy Approach to Spectrum Access with Channel Reuse <a href="https://arxiv.org/pdf/2408.12402" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
-        <p><em>Dan Ben Ami, Kobi Cohen</em></p>
-        <p><em>In preprint, 2024</em></p>
-        <p>I introduced the "Stable Polygamy Problem" (SPP) for spectrum access with channel reuse, developed efficient algorithms including RP&R, and proved their performance in specific interference regimes with strong simulation results.</p>
-      </div>
+  </main>
+</div>
 
-      <!-- Publication 2: Client Selection for Generalization -->
-      <div class="entry">
-        <h3>Client Selection for Generalization in Accelerated Federated Learning: A Multi-Armed Bandit Approach <a href="https://ieeexplore.ieee.org/abstract/document/10891761" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
-        <p><em>Dan Ben Ami, Kobi Cohen, Qing Zhao</em></p>
-        <p><em>IEEE Access, 2025</em></p>
-        <p>I developed a multi-armed bandit–based algorithm (BSFL) for federated learning that balances training latency and model generalization, achieving logarithmic regret and outperforming prior methods on synthetic and real datasets.</p>
-        <img src="FL_time.png" alt="Client Selection Publication Image" class="img-fluid rounded" style="width: 50%; height: auto;" />
-      </div>
+<footer>© 2026 Dan Ben Ami</footer>
 
-      <!-- Publication 3: Universal System for Boosting Gene Expression -->
-      <div class="entry">
-        <h3>A Universal System for Boosting Gene Expression in Eukaryotic Cell-Lines <a href="https://www.nature.com/articles/s41467-024-46573-5.pdf" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
-        <p><em>Inbal Vaknin, Or Willinger, Jonathan Mandl, Hadar Heuberger, Dan Ben-Ami, Yi Zeng, Sarah Goldberg, Yaron Orenstein, Roee Amit</em></p>
-        <p><em>Nature Communications, 2024</em></p>
-        <p>Designed and trained deep learning models to predict protein expression from DNA sequences, guiding motif selection for cross-species promoter boosting.</p>
-      </div>
-
-      <!-- Publication 4: Regulatory Grammar Rules in S. cerevisiae -->
-      <div class="entry">
-        <h3>Characterizing Regulatory Grammar Rules in S. cerevisiae Using a Library of Conserved and Unknown Motifs <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4412621" target="_blank" style="text-decoration: none; color: #007bff; margin-left: 8px;"><i class="bi bi-link-45deg"></i></a></h3>
-        <p><em>Inbal Vaknin, Hadar Heuberger, Dan Ben-Ami, Or Wilinger, Yi Zeng, Leon Anavy, Zohar Yakhini, Sarah Goldberg, Yaron Orenstein, Roee Amit</em></p>
-        <p><em>Cerevisiae, 2023</em></p>
-        <p>Developed convolutional neural network models to predict gene expression from DNA sequences, enabling validation of conserved transcriptional grammar rules.</p>
-      </div>
-    </div>
-  </section>
-
-  
-
-  <!-- Programming Languages & Libraries Section -->
-  <section id="programming-languages">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-code-slash"></i> Programming</h2>
-      </header>
-      <div class="entry">
-        <ul>
-          <li><strong>Programming Languages:</strong> Python, C++, MATLAB, Bash</li>
-          <li><strong>Deep Learning Frameworks:</strong> PyTorch, TensorFlow, Keras</li>
-          <li><strong>Computer Vision & VLMs:</strong> OpenCV, Hugging Face Transformers, vLLM, CLIP, LLaVA, Qwen, SAM, YOLO</li>
-          <li><strong>Data Processing & Analysis:</strong> NumPy, Pandas, scikit-learn, SciPy</li>
-          <li><strong>Visualization:</strong> Matplotlib, Plotly, TensorBoard</li>
-          <li><strong>Optimization & MLOps:</strong> PyTorch Lightning, Hydra, ONNX, Torch-TensorRT</li>
-          <li><strong>Tools & Environments:</strong> Docker, Git, Linux, Conda, Jupyter</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Soft Skills Section -->
-  <section id="soft-skills" class="bg-light">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-chat-dots"></i> Soft Skills</h2>
-      </header>
-      <div class="entry">
-        <ul>
-          <li>Creative problem-solving and innovation in AI system design</li>
-          <li>Strong analytical and critical thinking abilities</li>
-          <li>Cross-disciplinary collaboration and communication</li>
-          <li>Rapid learning and adaptation to emerging technologies</li>
-          <li>Translating research concepts into practical, scalable solutions</li>
-          <li>Project planning and execution in complex, multi-stage pipelines</li>
-          <li>Mentoring and knowledge sharing in technical teams</li>
-          <li>Attention to detail while maintaining big-picture perspective</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Awards Section (before Contact) -->
-  <!-- <section id="awards">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-trophy"></i> Awards</h2>
-      </header>
-      <div class="entry">
-        <p><strong>Award 1:</strong> Description of the award, awarding organization, and date.</p>
-        <p><strong>Award 2:</strong> Description of the award, awarding organization, and date.</p>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- Contact Information Section -->
-  <section id="contact-info" class="bg-light">
-    <div class="container">
-      <header class="section-header text-center">
-        <h2><i class="bi bi-envelope"></i> Contact Information</h2>
-      </header>
-      <div class="entry text-center">
-        <p>Email: <a href="mailto:your.email@example.com">danbenami3@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/dan-ben-ami/" target="_blank">Dan Ben Ami</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Ensure inline, muted autoplay on iOS and resume if Safari blocks initially
-    document.addEventListener('DOMContentLoaded', function () {
-      const videos = Array.from(document.querySelectorAll('video[autoplay]'));
-
-      const attemptPlay = (video) => {
-        if (!video) return;
-        video.muted = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        const promise = video.play();
-        if (promise && typeof promise.catch === 'function') {
-          promise.catch(() => {/* ignored */});
-        }
-      };
-
-      videos.forEach(v => attemptPlay(v));
-
-      // Fallback: on first touch/scroll, try playing again
-      const resumeAll = () => {
-        videos.forEach(v => {
-          if (v.paused) {
-            attemptPlay(v);
-          }
-        });
-      };
-      window.addEventListener('touchstart', resumeAll, { once: true, passive: true });
-      window.addEventListener('scroll', resumeAll, { once: true, passive: true });
-
-      // Play when a video actually enters the viewport (iOS often requires visibility)
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              attemptPlay(entry.target);
-            }
-          });
-        }, { threshold: 0.25 });
-        videos.forEach(v => observer.observe(v));
-      }
-    });
-  </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const videos = Array.from(document.querySelectorAll('video[autoplay]'));
+  const attemptPlay = (v) => {
+    if (!v) return;
+    v.muted = true; v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
+    const p = v.play(); if (p && p.catch) p.catch(()=>{});
+  };
+  videos.forEach(attemptPlay);
+  const resumeAll = () => videos.forEach(v => { if (v.paused) attemptPlay(v); });
+  window.addEventListener('touchstart', resumeAll, {once:true, passive:true});
+  window.addEventListener('scroll', resumeAll, {once:true, passive:true});
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) attemptPlay(e.target); }), {threshold:.25});
+    videos.forEach(v => io.observe(v));
+  }
+  document.querySelectorAll('.masthead nav a').forEach(a =>
+    a.addEventListener('click', () => document.querySelector('.masthead nav').classList.remove('open')));
+});
+</script>
 </body>
 </html>
