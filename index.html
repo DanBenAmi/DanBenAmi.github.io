@@ -138,6 +138,9 @@
     font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-right:7px;
   }
   .pub p.abs{font-size:.95rem;margin:0;}
+  .pub-thumb.fit{object-fit:contain;background:#fbfaf7;}
+  html[data-theme="dark"] .pub-thumb.fit{background:#fbfaf7;}
+  .pub .links{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.88rem;font-weight:600;margin:8px 0 0;}
 
   /* skills */
   .kv{display:grid;grid-template-columns:200px 1fr;gap:6px 18px;font-size:.97rem;}
@@ -330,11 +333,25 @@
       <h2>Publications</h2>
 
       <article class="pub">
+        <a href="https://danbenami.github.io/have-i-seen-enough/" target="_blank"><img class="pub-thumb fit" src="have_i_seen_enough_teaser.jpg" alt="Have I Seen Enough? teaser: readiness signal rises when the evidence appears in the video, separately from the model's answer confidence" /></a>
+        <div>
+          <h3><a href="https://danbenami.github.io/have-i-seen-enough/" target="_blank">Have I Seen Enough? Frozen Video-Language Models Encode Evidence Readiness <span aria-hidden="true">↗</span></a></h3>
+          <p class="authors"><b>Dan Ben-Ami</b>, Kobi Cohen, Chaim Baskin</p>
+          <p class="venue"><span class="badge">Under review</span>2026</p>
+          <p class="abs">We show that frozen VideoLLMs already carry a linearly readable, question-conditioned signal for whether the evidence needed to answer has arrived. It is present in all seven models tested, distinct from confidence, and usable for deciding when a streaming model should answer (Readiness Gating).</p>
+          <p class="links">
+            <a href="https://danbenami.github.io/have-i-seen-enough/" target="_blank">Project page &amp; video ↗</a>
+            <a href="https://arxiv.org/abs/2610.08560" target="_blank">arXiv ↗</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="pub">
         <img class="pub-thumb" src="himu_pipe3_with_vid_streams_wb.png" alt="HiMu pipeline" />
         <div>
           <h3><a href="https://danbenami.github.io/HiMu.io/" target="_blank">HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering <span aria-hidden="true">↗</span></a></h3>
           <p class="authors"><b>Dan Ben-Ami</b>, Gabriele Serussi, Kobi Cohen, Chaim Baskin</p>
-          <p class="venue"><span class="badge">Under review</span>2026</p>
+          <p class="venue"><span class="badge">WACV</span>2027</p>
           <p class="abs">We introduce HiMu, a training-free hierarchical multimodal frame selection framework for long-video QA that decomposes queries into logic trees with specialized experts, advancing the efficiency–accuracy Pareto front while requiring ~10× fewer FLOPs than agentic systems.</p>
         </div>
       </article>
